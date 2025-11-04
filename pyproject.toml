@@ -1,3 +1,39 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vcrpy"
+version = "7.0.1+urllib3v2"
+description = "Automatically mock your HTTP interactions to simplify and speed up testing"
+readme = "README.rst"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Kevin McCarthy", email = "me@kevinmccarthy.org"}]
+dependencies = [
+    "PyYAML",
+    "wrapt",
+    "yarl",
+    "urllib3>=2,<3",
+]
+
+[project.optional-dependencies]
+tests = [
+    "aiohttp",
+    "boto3",
+    "httplib2",
+    "httpx",
+    "pytest-aiohttp",
+    "pytest-asyncio",
+    "pytest-cov",
+    "pytest-httpbin",
+    "pytest",
+    "requests>=2.22.0",
+    "tornado",
+    "urllib3",
+    "Werkzeug==2.0.3",
+]
+
 [tool.codespell]
 skip = '.git,*.pdf,*.svg,.tox'
 ignore-regex = "\\\\[fnrstv]"
